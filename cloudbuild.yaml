@@ -4,7 +4,7 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'asia-southeast1-docker.pkg.dev/pendle-v2-common/pendle-registry/redis-shake:$COMMIT_SHA'
+      - 'asia-southeast1-docker.pkg.dev/pendle-v2-common/pendle-registry/redis-shake:$SHORT_SHA'
       - '-t'
       - 'asia-southeast1-docker.pkg.dev/pendle-v2-common/pendle-registry/redis-shake:latest'
       - '.'
@@ -13,7 +13,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'asia-southeast1-docker.pkg.dev/pendle-v2-common/pendle-registry/redis-shake:$COMMIT_SHA'
+      - 'asia-southeast1-docker.pkg.dev/pendle-v2-common/pendle-registry/redis-shake:$SHORT_SHA'
 
   # Push the image with latest tag
   - name: 'gcr.io/cloud-builders/docker'
@@ -22,7 +22,7 @@ steps:
       - 'asia-southeast1-docker.pkg.dev/pendle-v2-common/pendle-registry/redis-shake:latest'
 
 images:
-  - 'asia-southeast1-docker.pkg.dev/pendle-v2-common/pendle-registry/redis-shake:$COMMIT_SHA'
+  - 'asia-southeast1-docker.pkg.dev/pendle-v2-common/pendle-registry/redis-shake:$SHORT_SHA'
   - 'asia-southeast1-docker.pkg.dev/pendle-v2-common/pendle-registry/redis-shake:latest'
 
 options:
